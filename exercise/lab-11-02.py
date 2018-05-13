@@ -19,7 +19,7 @@ keep_prob = tf.placeholder(tf.float32)
 X = tf.placeholder(tf.float32, [None, 784])
 Y = tf.placeholder(tf.float32, [None, 10])
 
-# img 28x28x1 (black/white) --> ??
+# img 28x28x1 (black/white)
 # input 사이즈는 모르기 때문에 -1로 셋팅
 X_img = tf.reshape(X, [-1, 28, 28, 1])
 
@@ -104,3 +104,7 @@ print('Accuracy: ', sess.run(accuracy, feed_dict={X: mnist.test.images, Y: mnist
 r = random.randint(0, mnist.test.num_examples - 1)
 print("Label: ", sess.run(tf.argmax(mnist.test.labels[r:r + 1], 1)))
 print("Prediction: ", sess.run(tf.argmax(logits, 1), feed_dict={X: mnist.test.images[r: r+1], keep_prob: 1}))
+
+
+# plt.imshow(mnist.test.images[r:r + 1]. reshape(28, 28), cmap='Greys', interpolation='nearest')
+# plt.show()
