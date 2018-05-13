@@ -62,7 +62,7 @@ L4 = tf.nn.relu(tf.matmul(L3_flat, W4) + b4)
 L4 = tf.nn.dropout(L4, keep_prob=keep_prob)
 
 
-# L5 Final FC 625 imputs -> 10 outputs
+# L5 Final FC 625 inputs -> 10 outputs
 W5 = tf.get_variable("W5", shape=[625, 10], initializer=tf.contrib.layers.xavier_initializer())
 b5 = tf.Variable(tf.random_normal([10]))
 logits = tf.matmul(L4, W5) + b5
