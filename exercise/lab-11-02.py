@@ -24,7 +24,7 @@ Y = tf.placeholder(tf.float32, [None, 10])
 X_img = tf.reshape(X, [-1, 28, 28, 1])
 
 
-# L1 ImgIn shape = (?, 28, 28, 1)
+# L1 ImageIn shape = (?, 28, 28, 1)
 W1 = tf.Variable(tf.random_normal([3, 3, 1, 32], stddev=0.01))
 #   Conv        -> (?, 28, 28, 32)
 #   Pool        -> (?, 14, 14, 32)
